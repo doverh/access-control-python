@@ -32,15 +32,13 @@ Open file that contains the allow list and denied list.
 with open(import_file, "r") as file_ips, open(denied_list,"r") as file_denied_ips:
 ```
 
-### Read the file contents
-
-Read file content and assign to a variable.
+3.Read file content and assign to a variable.
 
 ```python
 ip_addresses = file.read()
 ```
 
-### Convert the string into a list
+4.Convert the string into a list
 
 Using the split method convert list into array.
 
@@ -48,19 +46,19 @@ Using the split method convert list into array.
 ip_addresses = ip_addresses.split()
 ```
 
-### Iterate through the remove list
+5.Iterate through the remove list
 
 ```python
 for rm in remove_list:
 ```
 
-### Remove IP addresses that are on the remove list
+6.Remove IP addresses that are on the remove list
 
 ```python
 ip_addresses.remove(rm)
 ```
 
-### Update the file with the revised list of IP addresses 
+7.Update the file with the revised list of IP addresses 
 
 ```python
 with open(import_file, "w") as file:
