@@ -6,7 +6,7 @@ Python algorithm to control access.
 
 ### Scope - Access Mngt Health care company
 
-### System Design
+### Rules and System Design
 
 1. Update a file that identifies the employees who can access restricted content.
 2. File contains access information to personal patient records.
@@ -16,44 +16,56 @@ Python algorithm to control access.
 
 ### Project description
 
-
 1. Create an algorithm that uses Python code to check whether the allow list contains any IP addresses identified on the remove list.
-2. Remove those IP addresses from the file containing the allow list.
 
-### Open the file that contains the allow list
-
-Import the file "allow_list.txt" an assign it to a variable called "import_file". Open and read the file that contains the allow list and stores it into a variable called "file"
+1.1 Method receives 2 files as arguments
 
 ```python
-import_file = "Data/allow_list.txt"
-with open(import_file, "r") as import_file:
+def file_updates(import_file, denied_list):
+```
+
+2.Remove those IP addresses from the file containing the allow list.
+
+Open file that contains the allow list and denied list.
+
+```python
+with open(import_file, "r") as file_ips, open(denied_list,"r") as file_denied_ips:
 ```
 
 ### Read the file contents
 
 Read file content and assign to a variable.
 
-``````python
+```python
 ip_addresses = file.read()
 ```
 
 ### Convert the string into a list
 
+Using the split method convert list into array.
+
+```python
 ip_addresses = ip_addresses.split()
+```
 
 ### Iterate through the remove list
 
-[Add content here.]
+```python
+for rm in remove_list:
+```
 
 ### Remove IP addresses that are on the remove list
 
-[Add content here.]
+```python
+ip_addresses.remove(rm)
+```
 
 ### Update the file with the revised list of IP addresses 
 
-[Add content here.]
-
-### Summary
+```python
+with open(import_file, "w") as file:
+            file.write("\n".join(ip_addresses))
+```
 
 ## Reference
 
